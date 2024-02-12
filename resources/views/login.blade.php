@@ -8,6 +8,16 @@
 <body>
     <h1>Login</h1>
 
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <form class="formulario" method="POST" enctype="multipart/form-data" action="{{route('inicia-sesion')}}">
     @csrf
             <fieldset>
@@ -22,7 +32,7 @@
                 <input type="checkbox" name="remember"> Mantener sesión activa<br>
             </fieldset>
 
-            <button type="submit">Registrarse</button>
+            <button type="submit">Iniciar sesión</button>
 
         </form>
 
