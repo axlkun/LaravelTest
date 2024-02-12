@@ -9,6 +9,7 @@
     <h1>Login</h1>
 
     <form class="formulario" method="POST" enctype="multipart/form-data" action="{{route('inicia-sesion')}}">
+    @csrf
             <fieldset>
                 <legend>Credenciales</legend>
 
@@ -17,6 +18,8 @@
 
                 <label for="contraseña">Contraseña:</label>
                 <input type="password" id="contraseña" name="password" placeholder="Ingresa tu contraseña" required>
+
+                <input type="checkbox" name="remember"> Mantener sesión activa<br>
             </fieldset>
 
             <button type="submit">Registrarse</button>
