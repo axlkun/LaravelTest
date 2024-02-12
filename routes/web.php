@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::view('/login',"login")->name('login');
 Route::view('/register',"registro")->name('register');
-Route::view('/privada',"privada")->name('privada');
+Route::view('/privada',"privada")->middleware('auth')->name('privada');
 
 Route::post('/validar-registro',[LoginController::class,'register'])->name("validar-registro");
 Route::post('/inicia-sesion',[LoginController::class,'login'])->name("inicia-sesion");
