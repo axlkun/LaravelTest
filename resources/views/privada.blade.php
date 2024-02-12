@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Pagina privada</h1>
+    <p> @auth Hola  {{Auth::user()->name}} @endauth </p>
 
     <a href="{{route('logout')}}">Salir</a>
 </body>
