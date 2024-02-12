@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::view('/login',"login")->name('login');
-Route::view('/registro',"registro")->name('registro');
+Route::view('/register',"registro")->name('register');
 Route::view('/privada',"privada")->name('privada');
 
 Route::post('/validar-registro',[LoginController::class,'register'])->name("validar-registro");
