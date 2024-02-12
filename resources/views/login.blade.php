@@ -12,9 +12,6 @@
             <fieldset>
                 <legend>Credenciales</legend>
 
-                <label for="email">Nombre:</label>
-                <input id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
-
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
 
