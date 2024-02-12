@@ -30,6 +30,27 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
+        $validated = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:7'
+        ]);
+
+        $credentials = [
+            "email" => $validated['email'],
+            "password" => $validated['password']
+        ];
+
+        $remember = ($request->has('remember')) ? true : false;
+
+        if(Auth::attempt($credentials,$remember)){
+            $request->session()->regenerate();
+
+            return redirect()->intended(route('privada'));
+
+        }else{
+            return redirect(route('login'))->withInput();
+        }
+
 
     }
 
